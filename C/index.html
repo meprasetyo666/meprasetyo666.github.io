@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta charset="utf-8">
+
+
+
+  <title>Mohamad Eko Prasetyo</title>
+  <meta name="description" content="Website Purwokerto, Aplikasi (APP) Android Purwokerto, Aplikasi Dekstop Purwokerto, Sistem Informasi Purwokerto. Kami Developer Website (Web), Aplikasi Android, Aplikasi Desktop Di Purwokerto - Banyumas (Jawa Tengah Indonesia)">
+  <meta name="keywords" content=" Website Purwokerto, Aplikasi (APP) Android Purwokerto, Aplikasi Dekstop Purwokerto, Sistem Informasi Purwokerto, Software Purwokerto" />
+
+  <meta name="rating" content="general">
+  <meta name="robots" content="index, follow">
+  <meta name="distribution" content="world" />
+  <meta name="author" content="Mohamad" />
+  <meta name="generator" content="Mohamad" />
+  <link rel="SHORTCUT ICON" href="../../images/logo/accounts.jpg">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+ 
+  <!-- css datatables -->
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css"/>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+
+  <!-- ajax -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Datatables -->
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+
+  <!-- Sweet Alert -->
+  <script type="text/javascript" src="https://unpkg.com/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
+
+</head>
+<body>
+    <div class="container" style="width: 100%">
+        <div style="padding-bottom: 50px;">
+            <div style="background: #d4d3d3;
+                padding: 10px;
+                text-align: center;">
+                  <h1 style="margin-top: 0;">jQuery Dynamic Table CRUD</h1>
+            </div>
+        </div>
+        <div class="container" >
+            <div class="row">
+                <div class="col-md-12 col-lg-12">
+                    <table  class="table table-bordered" id="myTable">x
+                        <thead>
+                          <tr>
+                            <th><center>No</center></th>
+                            <th><center>No KTP</center></th>
+                            <th><center>Nama</center></th>
+                            <th><center></center></th>
+                           
+
+                          </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="col-md-12 col-lg-12">
+                    <input type="button" class="btn btn-primary" value="Show Data" id="btnGetData" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="http://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="  crossorigin="anonymous"></script>
+    <script src="jquery.dynamicTable-1.0.0.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#myTable").attr('class','table table-bordered');
+            $("#myTable").dynamicTable({
+                columns: [{
+                    text: "Name",
+                    key: "name"
+                },
+                {
+                    text: "Age",
+                    key: "age"
+                },
+                {
+                    text: "Gender",
+                    key: "gender"
+                },
+                ],
+                data: [{
+                    name: 'Mr. Jeff Brown',
+                    age: 30,
+                    gender: 'M',
+                },
+                {
+                    name: 'Ms. Rebeca John',
+                    age: 24,
+                    gender: 'F',
+                },
+                ],
+                getControl: function (columnKey) {
+                    if (columnKey == "age") {
+                        return '<input type="number" class="form-control" />';
+                    }
+
+                    if (columnKey == "gender") {
+                        return '<select class="form-control"><option value="M">Male</option><option value="F">Female</option></select>';
+                    }
+
+                    return '<input type="text" class="form-control" />';
+                    },
+                });
+
+            $('#btnGetData').click(function () {
+                var data = $("#myTable").getTableData();
+                console.log(data);
+            });
+        });
+    </script>
+    <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36251023-1']);
+    _gaq.push(['_setDomainName', 'jqueryscript.net']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    </script>
+</body>
+</html>
